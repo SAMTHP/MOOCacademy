@@ -1,24 +1,38 @@
-# README
+# Création de MOOCacademy
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Contributeurs SAMTHP & HERVELEE
 
-Things you may want to cover:
+**Après téléchargement du repo, lancer**
 
-* Ruby version
+```bundle install```  
+```rails db:migrate```  
+```rails db:seed```  
 
-* System dependencies
+Accès à la console pour vérifier la structure de la BDD
+```rails console```
 
-* Configuration
 
-* Database creation
+## Résumé du projet
+- Création d'une plateforme d'apprentissage en ligne
+- Chaque cours a un titre et une description
+- Chaque cours a plusieurs leçons, qui ont un titre et un body
 
-* Database initialization
+## Structure de la BDD
 
-* How to run the test suite
+### Models 
+- Cour
+- Lesson
 
-* Services (job queues, cache servers, search engines, etc.)
+### Colonnes de chaque table
+> ```timestamps``` est présent dans chaque table sous la forme  
+> ```t.datetime "created_at", null: false```  
+> ```t.datetime "updated_at", null: false```   
 
-* Deployment instructions
+* **table** ```cours```
+    * "titre" (string)
+    * "descprition" (text)
 
-* ...
+* **table** ```lessons```
+    * "titre" (string)
+    * "body" (text)
+    * "cour_id" **(foreign key)**
